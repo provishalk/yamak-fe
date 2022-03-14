@@ -1,0 +1,20 @@
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  &__box {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 8px;
+    &__active {
+      background-color: #7367f0;
+    }
+    &__default {
+      background-color: rgb(224, 224, 224);
+    }
+  }
+
+  &__text {
+    color: #a8a8a8;
+  }
+}

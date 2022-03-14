@@ -1,0 +1,8 @@
+.custom-input {
+  background-color: #f4fbfc;
+  border: none;
+  padding: 8px 1rem;
+  &:focus {
+    outline-color: #9ae7f3;
+  }
+}

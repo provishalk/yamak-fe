@@ -1,0 +1,21 @@
+.sign-up {
+  &__heading {
+    color: #717171;
+  }
+  &__default-text-color {
+    color: #919191;
+  }
+  &__password-rule-text {
+    font-size: 12px;
+  }
+  &__link-text {
+    color: #7367f0;
+    &:hover {
+      color: #6a5ef3;
+    }
+  }
+  &__facebook-icon {
+    color: #4267b2;
+  }
+
+}

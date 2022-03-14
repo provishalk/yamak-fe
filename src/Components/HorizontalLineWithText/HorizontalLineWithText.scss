@@ -1,0 +1,28 @@
+.horizontal-line-with-text {
+  & {
+    overflow: hidden;
+    text-align: center;
+    color: #a0a0a0;
+  }
+
+  &:before,
+  &:after {
+    background-color: #a7a7a7;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+  }
+
+  &:before {
+    right: 0.5em;
+    margin-left: -50%;
+  }
+
+  &:after {
+    left: 0.5em;
+    margin-right: -50%;
+  }
+}
