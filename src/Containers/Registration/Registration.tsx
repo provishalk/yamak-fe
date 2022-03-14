@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import CompanyTitle from "../../Components/CompanyTitle/CompanyTitle";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
@@ -6,10 +7,10 @@ import CustomInput from "../../Components/CustomInput/CustomInput";
 import ThirdPartyLoginCard from "../../Components/ThirdPartyLoginCard/ThirdPartyLoginCard";
 import HorizontalLineWithText from "../../Components/HorizontalLineWithText/HorizontalLineWithText";
 import Button from "../../Components/Button/Button";
-import "./SignUp.scss";
 import CustomCheckbox from "../../Components/CustomCheckbox/CustomCheckboxWithLabel";
+import "./Registration.scss";
 
-const SignUp = () => {
+const Registration = () => {
   return (
     <div className="container-lg">
       <CompanyTitle />
@@ -52,8 +53,14 @@ const SignUp = () => {
           </div>
           <Button label={"Create An Account"} />
           <p className="mt-4 text-center">
-            <span className="sign-up__default-text-color">Already have an account?</span>
-            <a className="mx-2 sign-up__link-text">Sing-in</a>
+            <span className="sign-up__default-text-color">
+              Already have an account?
+            </span>
+            <span className="mx-2">
+              <Link to="/" className="sign-up__link-text">
+                Login in
+              </Link>
+            </span>
           </p>
         </div>
       </div>
@@ -61,4 +68,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Registration;

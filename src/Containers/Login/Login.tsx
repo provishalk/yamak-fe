@@ -5,9 +5,18 @@ import { BsFacebook } from "react-icons/bs";
 import CustomInput from "../../Components/CustomInput/CustomInput";
 import ThirdPartyLoginCard from "../../Components/ThirdPartyLoginCard/ThirdPartyLoginCard";
 import HorizontalLineWithText from "../../Components/HorizontalLineWithText/HorizontalLineWithText";
+import Button from "../../Components/Button/Button";
+import { Link, useNavigate } from "react-router-dom";
+
 import "./Login.scss";
 
 const Login = () => {
+  const navigate = useNavigate();
+  
+  const handleGenerateOtp = () => {
+    navigate("password");
+  };
+
   return (
     <div className="container-lg">
       <CompanyTitle />
@@ -26,9 +35,17 @@ const Login = () => {
           <div className="mb-4 mt-4">
             <HorizontalLineWithText label={"or"} />
           </div>
-          <CustomInput />
+          <CustomInput placeholder="Email/ Mobile Number" />
           <p className="mt-3 login__text">Teams & Policy</p>
-          <button className="col-12 login__button">Generate OTP</button>
+          <Button label={"Generate OTP"} onClick={handleGenerateOtp} />
+          <p className="mt-4 text-center">
+            <span className="sign-up__default-text-color">Need help?</span>
+            <span className="mx-2">
+              <Link to="signup" className="sign-up__link-text">
+                Sign up
+              </Link>
+            </span>
+          </p>
         </div>
       </div>
     </div>

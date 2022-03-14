@@ -1,7 +1,18 @@
 .button {
-  background-color: #7367f0;
-  border: none;
-  color: #f7f7fc;
-  text-align: center;
-  padding: 8px;
+  &__default {
+    background-color: #7367f0;
+    border: none;
+    color: #f7f7fc;
+    text-align: center;
+    padding: 8px;
+    font-weight: 600;
+  }
+  &__light{
+    background-color: #e3f4f7;
+    border: none;
+    color: #7367f0;
+    text-align: center;
+    padding: 8px;
+    font-weight: 600;
+  }
 }
