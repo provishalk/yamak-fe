@@ -49,7 +49,7 @@ const Registration = () => {
             </div>
           </div>
           <div className="mb-4">
-            <CustomCheckbox />
+            <CustomCheckbox label={"Teams & Policy"}/>
           </div>
           <Button label={"Create An Account"} />
           <p className="mt-4 text-center">

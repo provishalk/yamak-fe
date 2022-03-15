@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import LoginPassword from "./Containers/LoginPassword/LoginPassword";
+import ResetPassword from "./Containers/ResetPassword/ResetPassword";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/signup" element={<Registration />} />
         <Route path="/password" element={<LoginPassword />} />
+        <Route path="/forget-password" element={<ResetPassword />} />
       </Routes>
     </BrowserRouter>
   );
