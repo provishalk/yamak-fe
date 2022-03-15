@@ -17,15 +17,17 @@ const Registration = () => {
       <div className="mt-5 row">
         <div className="col-lg-9 col-md-8 col-0"></div>
         <div className="col-lg-3 col-md-4">
-          <h2 className="mb-5 sign-up__heading">Create An Account</h2>
-          <ThirdPartyLoginCard Icon={FcGoogle} label="Continue with Google" />
-          <ThirdPartyLoginCard
-            Icon={BsFacebook}
-            label="Continue with Facebook"
-            iconStyle="sign-up__facebook-icon"
-          />
-          <div className="mb-4 mt-4">
-            <HorizontalLineWithText label={"or"} />
+          <h2 className="mb-4 sign-up__heading">Create An Account</h2>
+          <div className="sign-up__third-party-login-container">
+            <ThirdPartyLoginCard Icon={FcGoogle} label="Continue with Google" />
+            <ThirdPartyLoginCard
+              Icon={BsFacebook}
+              label="Continue with Facebook"
+              iconStyle="sign-up__facebook-icon"
+            />
+            <div className="mb-4 mt-4">
+              <HorizontalLineWithText label={"or"} />
+            </div>
           </div>
           <div className="row">
             <div className="col-6 mb-3">
@@ -49,7 +51,7 @@ const Registration = () => {
             </div>
           </div>
           <div className="mb-4">
-            <CustomCheckbox label={"Teams & Policy"}/>
+            <CustomCheckbox label={"Teams & Policy"} />
           </div>
           <Button label={"Create An Account"} />
           <p className="mt-4 text-center">

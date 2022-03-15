@@ -17,5 +17,12 @@
   &__facebook-icon {
     color: #4267b2;
   }
+}
 
+@media only screen and (max-width: 600px) {
+  .sign-up {
+    &__third-party-login-container {
+      display: none;
+    }
+  }
 }

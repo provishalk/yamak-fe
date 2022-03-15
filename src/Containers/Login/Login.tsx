@@ -37,7 +37,7 @@ const Login = () => {
           </div>
           <CustomInput placeholder="Email/ Mobile Number" />
           <p className="mt-3 login__text">Teams & Policy</p>
-          <Button label={"Generate OTP"} onClick={handleGenerateOtp} />
+          <Button label={"Sign In"} onClick={handleGenerateOtp} />
           <p className="mt-4 text-center">
             <span className="sign-up__default-text-color">Need help?</span>
             <span className="mx-2">
