@@ -1,17 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../../Components/Button/Button";
 import CompanyTitle from "../../Components/CompanyTitle/CompanyTitle";
 import CustomCheckboxWithLabel from "../../Components/CustomCheckbox/CustomCheckboxWithLabel";
 import CustomInput from "../../Components/CustomInput/CustomInput";
+import { useParams } from "react-router-dom";
+import { errorNotification, successNotification } from "../../utils/functions";
+import axios from "axios";
 import "./LoginPassword.scss";
 
 const LoginPassword = () => {
+  const [password, setPassword] = useState("");
+  const { email } = useParams();
   const navigate = useNavigate();
 
   const handleGenerateOtp = () => {
-    navigate("/otp");
+    navigate(`/otp/${email}`);
   };
+  const handleSignIn = () => {
+    if (password) {
+      axios
+        .post("http://localhost:3001/login-email", { email: email })
+        .then(() => {
+          successNotification("Logged in successfully");
+          navigate("/home");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      errorNotification("Invalid Input");
+    }
+  };
+
+  const handleInputChange = (e: any) => {
+    const { value } = e.target;
+    setPassword(value);
+  };
+
   return (
     <div className="container-lg">
       <CompanyTitle />
@@ -24,7 +50,7 @@ const LoginPassword = () => {
               Forget Password?
             </Link>
           </p>
-          <CustomInput type="password" />
+          <CustomInput type="password" onChange={handleInputChange} />
           <div className="mb-4">
             <CustomCheckboxWithLabel
               label={"Don't ask for Password on this device"}
@@ -33,7 +59,7 @@ const LoginPassword = () => {
           </div>
 
           <div className="mb-5">
-            <Button label={"Sign in"} />
+            <Button label={"Sign in"} onClick={handleSignIn} />
           </div>
           <div className="mb-4">
             <Button

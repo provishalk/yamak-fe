@@ -1,12 +1,16 @@
+import axios from "axios";
 import React, { useState } from "react";
 import OtpInput from "react-otp-input";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../../Components/Button/Button";
 import CompanyTitle from "../../Components/CompanyTitle/CompanyTitle";
 import CustomCheckboxWithLabel from "../../Components/CustomCheckbox/CustomCheckboxWithLabel";
+import { errorNotification, successNotification } from "../../utils/functions";
+import { useParams } from "react-router-dom";
 
 const LoginOtp = () => {
   const [otp, setOtp] = useState("");
+  const { mobileNo } = useParams();
   const navigate = useNavigate();
   const handleChange = (newOtp: any) => {
     setOtp(newOtp);
@@ -14,6 +18,21 @@ const LoginOtp = () => {
 
   const signInUsingPassword = () => {
     navigate("/password");
+  };
+
+  const handleSignIn = () => {
+    axios
+      .post("http://localhost:3001/login-otp", {
+        phone: mobileNo,
+        otp: otp,
+      })
+      .then((response) => {
+        successNotification("Logged In successfully");
+        navigate("/home");
+      })
+      .catch((error) => {
+        errorNotification("Something went wrong");
+      });
   };
   return (
     <div className="container-lg">
@@ -42,7 +61,7 @@ const LoginOtp = () => {
             />
           </div>
           <div className="mb-4">
-            <Button label={"Login In"} />
+            <Button label={"Login In"} onClick={handleSignIn} />
           </div>
           <p className="mt-4 generate-otp__text">
             <span>Didn't get the Code?</span>
